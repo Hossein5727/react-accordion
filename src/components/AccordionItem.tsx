@@ -1,0 +1,40 @@
+import { useState } from "react";
+import type { AccordionItemProps } from "../types";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+
+function AccordionItem({ item }: AccordionItemProps) {
+  const { title, content } = item;
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="bg-white rounded-lg p-4 w-2xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200">
+      <div
+        className="flex items-center justify-between cursor-pointer select-none"
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
+      >
+        <h3 className="text-lg font-semibold text-gray-800 pr-4">{title}</h3>
+        <button className="flex-shrink-0">
+          <ChevronDownIcon
+            className={`size-5 text-gray-600 transition-transform duration-300 ease-in-out ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+      </div>
+
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"
+        }`}
+      >
+        <div className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
+          {content}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default AccordionItem;
