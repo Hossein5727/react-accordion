@@ -1,7 +1,9 @@
+import AccordionList from "./components/AccordionList";
+
 function App() {
   return (
-    <div className="">
-      <h1>Hello World</h1>
+    <div className="bg-zinc-300 h-screen w-screen">
+      <AccordionList />
     </div>
   );
 }
