@@ -3,7 +3,7 @@ import type { AccordionItemProps } from "../types";
 
 function AccordionItem({ item, open, handleOpen }: AccordionItemProps) {
   const { title, content, id } = item;
-  const isOpen = id === open;
+  const isOpen = open;
 
   return (
     <div className="bg-white rounded-lg p-4 w-2xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200">

@@ -7,6 +7,10 @@ export interface AccordionItemType {
 
 export interface AccordionItemProps {
   item: AccordionItemType;
-  open: number|null;
+  open: boolean;
   handleOpen: (arg: number) => void;
+}
+
+export interface AccordionProps {
+  mode?: "multiple" | "single";
 }
