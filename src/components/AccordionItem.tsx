@@ -1,17 +1,16 @@
-import { useState } from "react";
-import type { AccordionItemProps } from "../types";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import type { AccordionItemProps } from "../types";
 
-function AccordionItem({ item }: AccordionItemProps) {
-  const { title, content } = item;
-  const [isOpen, setIsOpen] = useState(false);
+function AccordionItem({ item, open, handleOpen }: AccordionItemProps) {
+  const { title, content, id } = item;
+  const isOpen = id === open;
 
   return (
     <div className="bg-white rounded-lg p-4 w-2xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200">
       <div
         className="flex items-center justify-between cursor-pointer select-none"
         onClick={() => {
-          setIsOpen(!isOpen);
+          handleOpen(id);
         }}
       >
         <h3 className="text-lg font-semibold text-gray-800 pr-4">{title}</h3>
