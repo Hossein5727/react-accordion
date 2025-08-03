@@ -2,7 +2,7 @@ import AccordionList from "./components/AccordionList";
 
 function App() {
   return (
-    <div className="bg-zinc-300 h-screen w-screen">
+    <div className="bg-zinc-300 min-h-screen w-screen">
       <AccordionList />
     </div>
   );

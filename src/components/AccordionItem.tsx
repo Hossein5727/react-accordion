@@ -26,7 +26,7 @@ function AccordionItem({ item }: AccordionItemProps) {
 
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"
+          isOpen ? "max-h-screen opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"
         }`}
       >
         <div className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
