@@ -4,7 +4,7 @@ import { accordionList } from "./data";
 function App() {
   return (
     <div className="bg-zinc-300 min-h-screen w-screen">
-      <AccordionList mode="single" items={accordionList}/>
+      <AccordionList mode="single" items={accordionList} defaultOpenId={1}/>
     </div>
   );
 }

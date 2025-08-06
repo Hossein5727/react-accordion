@@ -14,4 +14,5 @@ export interface AccordionItemProps {
 export interface AccordionProps {
   mode?: "multiple" | "single";
   items: AccordionItemType[];
+  defaultOpenId?: number;
 }
