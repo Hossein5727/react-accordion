@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { accordionList } from "../data";
-import AccordionItem from "./AccordionItem";
 import type { AccordionProps } from "../types";
+import AccordionItem from "./AccordionItem";
 
-function AccordionList({ mode = "single" }: AccordionProps) {
+function AccordionList({ mode = "single", items }: AccordionProps) {
   // For single mode: track the open accordion ID (null if none open)
   // For multi mode: track array of open accordion IDs
   const [openAccordion, setOpenAccordion] = useState<null | number>(null);
@@ -15,9 +14,9 @@ function AccordionList({ mode = "single" }: AccordionProps) {
       setOpenAccordion(openAccordion === id ? null : id);
     } else {
       // Multi mode: add/remove from array of open accordions
-      setOpenAccordions(prev => {
+      setOpenAccordions((prev) => {
         if (prev.includes(id)) {
-          return prev.filter(openId => openId !== id);
+          return prev.filter((openId) => openId !== id);
         } else {
           return [...prev, id];
         }
@@ -36,7 +35,7 @@ function AccordionList({ mode = "single" }: AccordionProps) {
 
   return (
     <div className=" flex justify-center items-center flex-col gap-4 h-full">
-      {accordionList.map((item) => (
+      {items.map((item) => (
         <AccordionItem
           key={item.id}
           item={item}
