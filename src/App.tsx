@@ -1,5 +1,5 @@
 import AccordionList from "./components/AccordionList";
-import { accordionList } from "./data";
+import { accordionList } from "./data/index";
 
 function App() {
   return (

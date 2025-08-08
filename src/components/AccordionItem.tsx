@@ -1,8 +1,13 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import type { AccordionItemProps } from "../types";
 
-function AccordionItem({ item, open, handleOpen }: AccordionItemProps) {
-  const { title, content, id } = item;
+function AccordionItem({
+  title,
+  id,
+  children,
+  open,
+  handleOpen,
+}: AccordionItemProps) {
   const isOpen = open;
 
   return (
@@ -28,9 +33,7 @@ function AccordionItem({ item, open, handleOpen }: AccordionItemProps) {
           isOpen ? "max-h-screen opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"
         }`}
       >
-        <div className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
-          {content}
-        </div>
+        <div className="text-sm text-gray-600 leading-relaxed">{children}</div>
       </div>
     </div>
   );

@@ -1,18 +1,26 @@
+import type { ReactNode } from "react";
+
 export interface AccordionItemType {
   id: number;
   title: string;
-  content: string;
+  children: ReactNode;
   disabled?: boolean;
 }
 
-export interface AccordionItemProps {
-  item: AccordionItemType;
+export interface AccordionDataItemType {
+  id: number;
+  title: string;
+  content: ReactNode;
+  disabled?: boolean;
+}
+
+export interface AccordionItemProps extends AccordionItemType {
   open: boolean;
   handleOpen: (arg: number) => void;
 }
 
 export interface AccordionProps {
   mode?: "multiple" | "single";
-  items: AccordionItemType[];
+  items: AccordionDataItemType[];
   defaultOpenId?: number;
 }
