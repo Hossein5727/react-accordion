@@ -17,7 +17,9 @@ export interface AccordionDataItemType {
 export interface AccordionItemProps extends AccordionItemType {
   open: boolean;
   handleOpen: (arg: number) => void;
-  animated?: boolean;
+  animated: boolean;
+  openIcon: ReactNode;
+  closeIcon: ReactNode;
 }
 
 export interface AccordionProps {
@@ -25,4 +27,6 @@ export interface AccordionProps {
   items: AccordionDataItemType[];
   defaultOpenId?: number;
   animated?: boolean;
+  openIcon?: ReactNode;
+  closeIcon?: ReactNode;
 }

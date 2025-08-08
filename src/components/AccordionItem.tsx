@@ -8,6 +8,8 @@ function AccordionItem({
   open,
   handleOpen,
   animated,
+  openIcon,
+  closeIcon,
 }: AccordionItemProps) {
   const isOpen = open;
 
@@ -21,11 +23,17 @@ function AccordionItem({
       >
         <h3 className="text-lg font-semibold text-gray-800 pr-4">{title}</h3>
         <button className="flex-shrink-0">
-          <ChevronDownIcon
-            className={`size-5 text-gray-600 transition-transform duration-300 ease-in-out ${
-              isOpen ? "rotate-180" : ""
-            }`}
-          />
+          {!isOpen && openIcon ? (
+            openIcon
+          ) : isOpen && closeIcon ? (
+            closeIcon
+          ) : (
+            <ChevronDownIcon
+              className={`size-5 text-gray-600 transition-transform duration-300 ease-in-out ${
+                isOpen ? "rotate-180" : ""
+              }`}
+            />
+          )}
         </button>
       </div>
 
