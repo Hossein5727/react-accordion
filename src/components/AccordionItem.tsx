@@ -7,7 +7,7 @@ function AccordionItem({
   children,
   open,
   handleOpen,
-  animate,
+  animated,
 }: AccordionItemProps) {
   const isOpen = open;
 
@@ -31,7 +31,7 @@ function AccordionItem({
 
       <div
         className={`overflow-hidden ${
-          animate ? "transition-all duration-300" : ""
+          animated ? "transition-all duration-300" : ""
         }  ease-in-out ${
           isOpen ? "max-h-screen opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"
         }`}

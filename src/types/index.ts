@@ -17,12 +17,12 @@ export interface AccordionDataItemType {
 export interface AccordionItemProps extends AccordionItemType {
   open: boolean;
   handleOpen: (arg: number) => void;
-  animate?: boolean;
+  animated?: boolean;
 }
 
 export interface AccordionProps {
   mode?: "multiple" | "single";
   items: AccordionDataItemType[];
   defaultOpenId?: number;
-  animate?: boolean;
+  animated?: boolean;
 }
