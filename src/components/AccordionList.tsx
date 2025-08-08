@@ -6,6 +6,7 @@ function AccordionList({
   mode = "single",
   items,
   defaultOpenId,
+  animate = true,
 }: AccordionProps) {
   // For single mode: track the open accordion ID (null if none open)
   // For multi mode: track array of open accordion IDs
@@ -50,6 +51,7 @@ function AccordionList({
           title={item.title}
           open={isAccordionOpen(item.id)}
           handleOpen={handleOpenAccordion}
+          animate={animate}
         >
           {item.content}
         </AccordionItem>
