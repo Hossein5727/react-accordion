@@ -20,6 +20,9 @@ export interface AccordionItemProps extends AccordionItemType {
   animated: boolean;
   openIcon: ReactNode;
   closeIcon: ReactNode;
+  onKeyDown?: (event: React.KeyboardEvent) => void;
+  tabIndex?: number;
+  isFocused?: boolean;
 }
 
 export interface AccordionProps {
